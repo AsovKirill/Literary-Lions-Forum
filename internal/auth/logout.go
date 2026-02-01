@@ -22,7 +22,7 @@ func NewLogoutHandler(dbConn *sql.DB) http.HandlerFunc {
 				Value:    "",
 				Path:     "/",
 				Expires:  time.Unix(0, 0), // Expire immediately
-				MaxAge:   -1,			// Remove from browser
+				MaxAge:   -1,              // Remove from browser
 				HttpOnly: true,
 				SameSite: http.SameSiteLaxMode,
 			})

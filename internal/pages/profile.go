@@ -14,8 +14,8 @@ import (
 // ProfilePageData structures the data needed for rendering a user profile page.
 type ProfilePageData struct {
 	models.BasePageData
-	MyPosts    []models.Post // Posts authored by this user
-	MyLikes    []models.Post // Posts this user has liked
+	MyPosts    []models.Post     // Posts authored by this user
+	MyLikes    []models.Post     // Posts this user has liked
 	Categories []models.Category // All available categories
 }
 
@@ -69,7 +69,7 @@ func NewProfileHandler(dbConn *sql.DB) http.HandlerFunc {
 		for postRows.Next() {
 			var (
 				p           models.Post
-				createdText string 
+				createdText string
 			)
 			if err := postRows.Scan(
 				&p.ID, &p.UserID, &p.CategoryID,

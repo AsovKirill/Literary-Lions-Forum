@@ -17,14 +17,12 @@ func TermsPageHandler(dbConn *sql.DB) http.HandlerFunc {
 		_, username, logged := middleware.CurrentUser(r)
 		// Prepare template data: Login state, username, categories (optional)
 		data := struct {
-			
 			LoggedIn   bool
 			Username   string
-			Categories []models.Category 
+			Categories []models.Category
 		}{
-			LoggedIn:   logged,
-            Username:   username,
-            
+			LoggedIn: logged,
+			Username: username,
 		}
 		// Render the terms.html template with the prepared data
 		err := views.Templates.ExecuteTemplate(w, "terms.html", data)
