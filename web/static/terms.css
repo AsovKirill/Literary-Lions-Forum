@@ -1,0 +1,51 @@
+.terms-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 0 0 0;
+}
+
+.terms-page__container {
+  background: #fff;
+  max-width: 650px;
+  width: 100%;
+  border-radius: 22px;
+  padding: 40px 38px 50px 38px;
+  box-shadow: 0 3px 24px rgba(44, 57, 77, 0.1);
+}
+
+.terms-page__title {
+  font-size: 2.6em;
+  color: #ff6934;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.terms-page__intro {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.terms-page__list {
+  font-size: 1.07em;
+  margin-bottom: 34px;
+  color: #444;
+  padding-left: 20px;
+}
+
+.terms-page__list li {
+  margin-bottom: 18px;
+}
+
+.terms-page__contact {
+  margin-top: 18px;
+  font-size: 1em;
+  color: #555;
+}
+
+.terms-page__contact a {
+  color: #ff6934;
+  text-decoration: underline;
+}

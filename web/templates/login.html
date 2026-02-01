@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lions Literaly</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/login.css">
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+   
+  <header class="navbar">
+    <div class="navbar__logo"><a href="/"><img src="/static/logo.png" alt=""></a></div>
+    <nav class="navbar__nav">
+      <a class="navbar__link" href="/">Forum</a>
+      <a class="navbar__link" href="/about">About</a>
+      <a class="navbar__link" href="/terms">Terms</a>
+    </nav>
+    <div class="navbar__search">
+      <input class="search-input" type="text" placeholder="Type here to search...">
+      <button class="search-button" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+
+<circle cx="10" cy="9" r="8" stroke="#A7A7A7" stroke-width="2"/>
+<path d="M15.5 15.5L19.5 19.5" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="navbar__auth">
+      <div class="btn btn--secondary" ><a href="/siginup" class="signup_link">Sign up</a></button></div>
+      <div class="btn btn--primary" ><a href="/login" class="login_link">Login</a></button></div>
+    </div>
+  </header>
+  </div>
+  <main class="main">
+    <!-- Sidebar -->
+   
+
+    <!-- Main Content -->
+     <section class="content content--center">
+      <form class="login-form" method="post" action="/login">
+        <h1 class="login-form__title">Log in</h1>
+        <div class="login-form__field">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            autocomplete="username"
+            class="login_input"
+          >
+        </div>
+        <div class="login-form__field">
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+            autocomplete="current-password"
+            class="login_input"
+          >
+        </div>
+        <button class="btn btn--primary login-form__submit" type="submit">Log in</button>
+        <!-- Go-шаблон для ошибок -->
+        {{if .LoginError}}
+          <div class="login-form__error">{{.LoginError}}</div>
+        {{end}}
+      </form>
+    </section>
+    </section>
+  </main>
+  
+</body>
+</html>

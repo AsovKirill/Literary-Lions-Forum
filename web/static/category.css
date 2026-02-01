@@ -1,0 +1,11 @@
+.category_header {
+    padding-top: 30px;
+    padding-left: 40px;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    color: #212121;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #C5C5C5;
+    box-shadow: 0 8px 26px -12px rgba(38, 50, 56, 0.10);
+}

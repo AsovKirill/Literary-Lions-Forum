@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lions Literaly</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/create.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar__logo">
+        <a href="/"><img src="/static/logo.png" alt="" /></a>
+      </div>
+      <nav class="navbar__nav">
+        <a class="navbar__link" href="/">Forum</a>
+        <a class="navbar__link" href="/about">About</a>
+        <a class="navbar__link" href="/terms">Terms</a>
+      </nav>
+      <form class="navbar__search" method="GET" action="/search">
+        <input
+          class="search-input"
+          type="text"
+          name="q"
+          placeholder="Type here to search..."
+        />
+        <button class="search-button" type="submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            fill="none"
+          >
+            <circle cx="10" cy="9" r="8" stroke="#A7A7A7" stroke-width="2" />
+            <path
+              d="M15.5 15.5L19.5 19.5"
+              stroke="#A7A7A7"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </form>
+      <div class="navbar__auth">
+        {{if .LoggedIn}}
+        <div class="btn btn--secondary">
+          <a href="/logout" class="signup_link">Log Out</a>
+        </div>
+        <div class="btn btn--primary">
+          <a href="/createpost" class="login_link">Create</a>
+        </div>
+        <div class="btn btn--create">
+          <a href="/profile" class="profile_link">{{.Username}}</a>
+        </div>
+        {{else}}
+        <div class="btn btn--secondary">
+          <a href="/signup" class="signup_link">Sign up</a>
+        </div>
+        <div class="btn btn--primary">
+          <a href="/login" class="login_link">Login</a>
+        </div>
+        {{end}}
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar">
+        <section class="sidebar__section sidebar__categories">
+          <h2 class="sidebar__title">Categories</h2>
+          <ul class="categories-list">
+            {{range .Categories}}
+            <li class="categories-list__item">
+              <a href="/category/{{.ID}}">{{.Name}}</a>
+            </li>
+            {{else}}
+            <li class="categories-list__item">No categories</li>
+            {{end}}
+          </ul>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="create-post">
+          <div class="content-position">
+            <h2 class="create-post-header">Create post</h2>
+            <form
+              action="/createpost"
+              method="POST"
+              enctype="multipart/form-data"
+              class="create-post__form"
+            >
+              <input
+                type="text"
+                name="title"
+                placeholder="Header"
+                class="create-post__input"
+                required
+              />
+              <textarea
+                name="content"
+                placeholder="Text"
+                class="create-post__textarea"
+                rows="10"
+                required
+              ></textarea>
+              <!-- Категории: -->
+              <select name="category_id" class="create-post__select" required>
+                <option value="" disabled selected>Choose category</option>
+                {{range .Categories}}
+                <option value="{{.ID}}">{{.Name}}</option>
+                {{end}}
+              </select>
+              <div class="file-upload">
+                <label class="file-upload__label">
+                  Choose an image
+                  <input
+                    type="file"
+                    name="image"
+                    accept="image/*"
+                    class="file-upload__input"
+                  />
+                </label>
+              </div>
+              <button type="submit" class="btn btn--primary btn--post">
+                Post
+              </button>
+            </form>
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+  <main class="main">
+  <aside class="sidebar">
+    <section class="sidebar__section sidebar__categories">
+      <h2 class="sidebar__title">Categories</h2>
+      <ul class="categories-list">
+        {{range .Categories}}
+          <li class="categories-list__item"><a href="/category/{{.ID}}">{{.Name}}</a></li>
+        {{else}}
+          <li class="categories-list__item">No categories</li>Ы
+        {{end}}
+      </ul>
+    </section>
+    Ы
+  </aside>
+  
+  <section class="content">
+    <section class="create-post">
+      <div class="content-position">
+        <h2 class="create-post-header">Create post</h2>
+        <form action="/createpost" method="POST" enctype="multipart/form-data" class="create-post__form">
+          <input 
+            type="text" 
+            name="title" 
+            placeholder="Header" 
+            class="create-post__input" 
+            required
+          >
+          <textarea 
+            name="content" 
+            placeholder="Text" 
+            class="create-post__textarea" 
+            rows="10" 
+            required
+          ></textarea>
+          <!-- Категории: -->
+          <select name="category_id" class="create-post__select" required>
+            <option value="" disabled selected>Choose category</option>
+            {{range .Categories}}
+              <option value="{{.ID}}">{{.Name}}</option>
+            {{end}}
+          </select>
+          <div class="file-upload">
+            <label class="file-upload__label">
+              Choose an image
+              <input type="file" name="image" accept="image/*" class="file-upload__input">
+            </label>
+          </div>
+          <button 
+            type="submit" 
+            class="btn btn--primary btn--post"
+          >Post</button>
+        </form>
+      </div>
+    </section>
+  </section>
+</main>
+</body>
+</html>

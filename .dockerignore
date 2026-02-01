@@ -1,0 +1,14 @@
+.git
+.vscode
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.db-journal
+*.exe
+*.DS_Store
+*.swp
+__pycache__/
+node_modules/
+uploads/
+.idea/

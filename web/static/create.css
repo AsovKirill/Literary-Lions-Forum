@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+.create-post {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-left: 50px;
+    padding-bottom: 40px;
+    
+   
+}
+.create-post-header {
+     font-size: 38px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    
+}
+.content-position {
+    min-width: 40%;
+}
+.create-post__form {
+    font-family: 'Rubik', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+.create-post__input {
+    width: 100%;
+    height: 67px;
+    padding-left: 20px;
+    border: 0;
+    border-radius: 20px;
+    background-color: #E3E3E3;
+}
+.create-post__textarea {
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 20px;
+    border: 0;
+    border-radius: 20px;
+    background-color: #E3E3E3;
+}
+.create-post__file {
+    padding: 10px 22px 10px 22px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 25px;
+    
+    cursor: pointer;
+}
+.file-upload__label {
+  display: inline-block;
+  background-color: #E3E3E3;
+  font-size: 12px;
+  font-weight: 300;
+  color: #9c9c9c;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s;
+  transition: color 0.3s;
+}
+
+.file-upload__label:hover {
+  background-color: #999999;
+  color: white;
+}
+
+
+.file-upload__input {
+  display: none;
+}
+.btn--post {
+max-width: 15%;
+}
+
+.create-post__form {
+  position: relative;
+}
+.create-post__select {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 16px 0;
+  font-size: 15px;
+  border: 1.5px solid #e1e1e1;
+  border-radius: 8px;
+  background: #E3E3E3;
+  color: #222;
+  transition: border-color 0.18s;
+  outline: none;
+  box-shadow: 0 2px 8px 0 rgba(214,91,19,0.02);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 22px 22px;
+
+}
+
+.create-post__select:focus {
+  border-color: black;
+  background: #E3E3E3;
+}
+.create-post__select,
+.create-post__select option {
+  font-family: 'Rubik', Arial, sans-serif;
+  font-size: 16px;         
+  font-weight: 300;        
+  color: #212121;          
+  background: #fafafa;     
+  border-radius: 8px;      
+  padding: 10px 14px;      
+  border: 1px solid #aaa;  
+  outline: none;
+  transition: border 0.2s;
+}
+
+.create-post__select:focus {
+  border: 1.5px solid #ff6600; 
+}
+@media screen and (min-width: 1440px) and (max-width: 1499px) {
+  .btn--post {
+    max-width: 30%;
+  }
+ }

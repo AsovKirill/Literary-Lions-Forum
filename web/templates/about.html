@@ -1,0 +1,121 @@
+{{define "about.html"}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> Lions Literaly</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/about.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+      <div class="navbar__logo">
+        <a href="/"><img src="/static/logo.png" alt="Lions Literaly" /></a>
+      </div>
+      <nav class="navbar__nav">
+        <a class="navbar__link" href="/">Forum</a>
+        <a class="navbar__link" href="/about">About</a>
+        <a class="navbar__link" href="/terms">Terms</a>
+      </nav>
+      <div class="navbar__search">
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Type here to search..."
+        />
+        <button class="search-button" type="button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            fill="none"
+          >
+            <circle cx="10" cy="9" r="8" stroke="#A7A7A7" stroke-width="2" />
+            <path
+              d="M15.5 15.5L19.5 19.5"
+              stroke="#A7A7A7"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="navbar__auth">
+        {{if .LoggedIn}}
+        <div class="btn btn--secondary">
+          <a href="/logout" class="signup_link">Log Out</a>
+        </div>
+        <div class="btn btn--primary">
+          <a href="/createpost" class="login_link">Create</a>
+        </div>
+        <div class="btn btn--create">
+          <a href="/profile" class="profile_link">{{.Username}}</a>
+        </div>
+        {{else}}
+        <div class="btn btn--secondary">
+          <a href="/signup" class="signup_link">Sign up</a>
+        </div>
+        <div class="btn btn--primary">
+          <a href="/login" class="login_link">Login</a>
+        </div>
+        {{end}}
+      </div>
+    </header>
+    <main class="main">
+        
+
+      <section class="about-page">
+        <div class="about-page__container">
+          <img
+            src="/static/logo.png"
+            alt="Lions Literary Logo"
+            class="about-page__logo"
+          />
+          <h1 class="about-page__title">Welcome to Literary Lions!</h1>
+          <p class="about-page__subtitle">
+            <b>Literary Lions</b> is your online book club and discussion forum,
+            designed for passionate readers, writers, and everyone who loves the
+            world of books.
+          </p>
+          <h2 class="about-page__section-title">Why Join Us?</h2>
+          <ul class="about-page__features">
+            <li>
+              <b>Share and Discuss:</b> Start conversations about your favorite
+              books, authors, genres, or literary trends.
+            </li>
+            <li>
+              <b>Organized by Categories:</b> Dive deep into specific genres,
+              themes, and even join writing challenges!
+            </li>
+            <li>
+              <b>Like & Dislike:</b> Express your opinion on posts and comments
+              with a single click.
+            </li>
+            <li>
+              <b>Everyone is Welcome:</b> Browse discussions or
+              participate—registration is quick and easy.
+            </li>
+            <li>
+              <b>Discover More:</b> Get reading recommendations and preserve
+              book club insights for future members.
+            </li>
+          </ul>
+          <h2 class="about-page__section-title">Our Mission</h2>
+          <p class="about-page__mission">
+            We believe every reader and writer deserves a space to connect,
+            share, and grow. Literary Lions helps you move beyond sticky notes
+            and paper clutter—making book club life simple, social, and fun.
+          </p>
+          <a class="about-page__cta" href="/signup">Join the Pride!</a>
+          <p class="about-page__meta">
+            Questions? Suggestions? Contact our moderators or post in the
+            <a href="/category/Forum%20Announcements">Announcements</a> section.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+{{end}}

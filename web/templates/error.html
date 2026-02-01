@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Error {{.Status}} - Lions Literaly</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+      <div class="navbar__logo">
+        <a href="/"><img src="/static/logo.png" alt="Lions Literaly" /></a>
+      </div>
+      <nav class="navbar__nav">
+        <a class="navbar__link" href="/">Forum</a>
+        <a class="navbar__link" href="/about">About</a>
+        <a class="navbar__link" href="/terms">Terms</a>
+      </nav>
+      <div class="navbar__search">
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Type here to search..."
+        />
+        <button class="search-button" type="button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            fill="none"
+          >
+            <circle cx="10" cy="9" r="8" stroke="#A7A7A7" stroke-width="2" />
+            <path
+              d="M15.5 15.5L19.5 19.5"
+              stroke="#A7A7A7"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="navbar__auth">
+        {{if .LoggedIn}}
+        <div class="btn btn--secondary">
+          <a href="/logout" class="signup_link">Log Out</a>
+        </div>
+        <div class="btn btn--primary">
+          <a href="/createpost" class="login_link">Create</a>
+        </div>
+        <div class="btn btn--create">
+          <a href="/profile" class="profile_link">{{.Username}}</a>
+        </div>
+        {{else}}
+        <div class="btn btn--secondary">
+          <a href="/signup" class="signup_link">Sign up</a>
+        </div>
+        <div class="btn btn--primary">
+          <a href="/login" class="login_link">Login</a>
+        </div>
+        {{end}}
+      </div>
+    </header>
+    <main class="main">
+      <aside class="sidebar">
+        <section class="sidebar__section sidebar__categories">
+          <h2 class="sidebar__title">Categories</h2>
+          <ul class="categories-list">
+            <li class="categories-list__item">General</li>
+            <li class="categories-list__item">Popular</li>
+            <li class="categories-list__item">All</li>
+          </ul>
+        </section>
+      </aside>
+
+      <section
+        class="content"
+        style="display: flex; align-items: center; justify-content: center"
+      >
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <img
+            src="/static/cry.png"
+            alt="Sad Lion"
+            style="width: 120px; margin-bottom: 24px"
+          />
+          <div style="font-size: 5em; color: #ff6934; font-weight: 700">
+            {{.Status}}
+          </div>
+          <h1 style="font-size: 2.5em; margin-bottom: 24px; color: #333">
+            Oops! Something went wrong.
+          </h1>
+          <p style="font-size: 1.5em; color: #555; margin-bottom: 40px">
+            {{.Message}}
+          </p>
+          <a
+            class="btn btn--primary"
+            href="/"
+            style="text-decoration: none; font-size: 1.1em"
+            >Go to Home</a
+          >
+          <p style="margin-top: 32px; color: #888; font-size: 0.95em">
+            Lion icon by
+            <a
+              href="https://www.flaticon.com/free-icons/lion"
+              title="Lion icons"
+              style="color: #ff6934"
+              target="_blank"
+              rel="noopener"
+              >MrHamster</a
+            >
+            on Flaticon
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

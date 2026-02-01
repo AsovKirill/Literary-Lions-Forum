@@ -1,0 +1,139 @@
+/* ---- About Page Styles ---- */
+.about-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  width: 100%;
+  background: none;
+  padding: 40px 0;
+}
+
+.about-page__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 650px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(230, 139, 82, 0.06);
+  padding: 38px 34px 34px 34px;
+}
+
+.about-page__logo {
+  width: 120px;
+  margin-bottom: 24px;
+}
+
+.about-page__title {
+  font-size: 2.5em;
+  color: #ff6934;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.about-page__subtitle {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.about-page__features {
+  text-align: left;
+  font-size: 1.08em;
+  color: #555;
+  margin-bottom: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.about-page__features li {
+  margin-bottom: 9px;
+  padding-left: 1.4em;
+  position: relative;
+}
+
+.about-page__features li:before {
+  content: "📚";
+  position: absolute;
+  left: 0;
+  font-size: 1.13em;
+}
+
+.about-page__features li:nth-child(2)::before {
+  content: "🗂";
+}
+.about-page__features li:nth-child(3)::before {
+  content: "👍";
+}
+.about-page__features li:nth-child(4)::before {
+  content: "💬";
+}
+.about-page__features li:nth-child(5)::before {
+  content: "🔍";
+}
+
+.about-page__section-title {
+  color: #222;
+  margin: 26px 0 8px 0;
+  font-size: 1.21em;
+  font-weight: 600;
+}
+
+.about-page__mission {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 24px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.about-page__cta {
+  display: inline-block;
+  font-size: 1.1em;
+  margin-bottom: 18px;
+  background: #ff6934;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.18s;
+  border: none;
+}
+
+.about-page__cta:hover {
+  background: #e44f22;
+}
+
+.about-page__meta {
+  font-size: 0.97em;
+  color: #888;
+  text-align: center;
+}
+.about-page__meta a {
+  color: #ff8243;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-page__container {
+    padding: 26px 10vw 20px 10vw;
+  }
+}
+@media (max-width: 550px) {
+  .about-page__container {
+    padding: 14px 0 10px 0;
+    border-radius: 0;
+  }
+  .about-page__title {
+    font-size: 1.55em;
+  }
+}

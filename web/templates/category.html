@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{.Category.Name}} — Lions Literally</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/category.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar__logo"><a href="/"><img src="/static/logo.png" alt=""></a></div>
+    <nav class="navbar__nav">
+      <a class="navbar__link" href="/">Forum</a>
+      <a class="navbar__link" href="/about">About</a>
+      <a class="navbar__link" href="/terms">Terms</a>
+    </nav>
+    <form class="navbar__search" method="GET" action="/search">
+  <input class="search-input" type="text" name="q" placeholder="Type here to search...">
+  <button class="search-button" type="submit">
+   <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+
+<circle cx="10" cy="9" r="8" stroke="#A7A7A7" stroke-width="2"/>
+<path d="M15.5 15.5L19.5 19.5" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</form>
+    <div class="navbar__auth">
+      {{if .LoggedIn}}
+        <div class="btn btn--secondary"><a href="/logout" class="signup_link">Log Out</a></div>
+        <div class="btn btn--primary"><a href="/createpost" class="login_link">Create</a></div>
+        <div class="btn btn--create"><a href="/profile" class="profile_link">{{.Username}}</a></div>
+      {{else}}
+        <div class="btn btn--secondary"><a href="/signup" class="signup_link">Sign up</a></div>
+        <div class="btn btn--primary"><a href="/login" class="login_link">Login</a></div>
+      {{end}}
+    </div>
+  </header>
+  <main class="main">
+    <aside class="sidebar">
+      <section class="sidebar__section sidebar__categories">
+        <h2 class="sidebar__title">Categories</h2>
+        <ul class="categories-list">
+        {{range .Categories}}
+          <li class="categories-list__item"><a href="/category/{{.ID}}">{{.Name}}</a></li>
+        {{else}}
+          <li class="categories-list__item">No categories</li>
+        {{end}}
+      </ul>
+      </section>
+      <section class="sidebar__section sidebar__recent-logins">
+        <h2 class="sidebar__title">Recent Logins</h2>
+        <ul class="recent-logins-list">
+          <li class="recent-logins-list__item">Username</li>
+        </ul>
+      </section>
+      <section class="sidebar__section sidebar__popular-theme">
+        <h2 class="sidebar__title">Popular theme</h2>
+        <ul class="popular-theme-list">
+          <li class="popular-theme-list__item">#fantasy2025</li>
+          <li class="popular-theme-list__item">#HarryPotter</li>
+          <li class="popular-theme-list__item">#BOOK VS MOVIE</li>
+          <li class="popular-theme-list__item">#icantread</li>
+        </ul>
+      </section>
+    </aside>
+    <section class="content">
+      <section class="posts-feed">
+        <h2  class="category_header">{{.Category.Name}}</h2>
+        <div class="posts-list">
+          {{range .Posts}}
+          <a class="post-card-link" href="/post/{{.ID}}">
+            <article class="post-card">
+              <div class="post-card__header">
+                <span class="post-card__author">{{.Author}}</span>
+                <span class="post-card__date">{{.CreatedAt.Format "02 Jan 2006 15:04"}}</span>
+              </div>
+              <h3 class="post-card__title">{{.Title}}</h3>
+              <div class="post-card__body">
+                {{if .Image}}
+                  <div class="post-card__image">
+                    <img src="{{.Image}}" alt="" class="post-card__image-content">
+                  </div>
+                {{end}}
+                <p class="post-card__text">{{.Content}}</p>
+              </div>
+            </article>
+          </a>
+          {{else}}
+            <p>No posts in this category yet.</p>
+          {{end}}
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
+

@@ -1,0 +1,94 @@
+{{define "terms.html"}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> Lions Literaly</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/terms.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+      <div class="navbar__logo">
+        <a href="/"><img src="/static/logo.png" alt="Lions Literaly" /></a>
+      </div>
+      <nav class="navbar__nav">
+        <a class="navbar__link" href="/">Forum</a>
+        <a class="navbar__link" href="/about">About</a>
+        <a class="navbar__link" href="/terms">Terms</a>
+      </nav>
+      <div class="navbar__search">
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Type here to search..."
+        />
+        <button class="search-button" type="button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            fill="none"
+          >
+            <circle cx="10" cy="9" r="8" stroke="#A7A7A7" stroke-width="2" />
+            <path
+              d="M15.5 15.5L19.5 19.5"
+              stroke="#A7A7A7"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="navbar__auth">
+        {{if .LoggedIn}}
+        <div class="btn btn--secondary">
+          <a href="/logout" class="signup_link">Log Out</a>
+        </div>
+        <div class="btn btn--primary">
+          <a href="/createpost" class="login_link">Create</a>
+        </div>
+        <div class="btn btn--create">
+          <a href="/profile" class="profile_link">{{.Username}}</a>
+        </div>
+        {{else}}
+        <div class="btn btn--secondary">
+          <a href="/signup" class="signup_link">Sign up</a>
+        </div>
+        <div class="btn btn--primary">
+          <a href="/login" class="login_link">Login</a>
+        </div>
+        {{end}}
+      </div>
+    </header>
+    <main class="main">
+        
+      </aside>
+
+      <section class="terms-page">
+        <div class="terms-page__container">
+          <h1 class="terms-page__title">Terms of Service</h1>
+          <p class="terms-page__intro">
+            Welcome to Literary Lions! By using our forum, you agree to the following terms and conditions.
+          </p>
+          <ol class="terms-page__list">
+            <li><b>Respectful Conduct:</b> Treat all members with kindness and respect. No harassment, hate speech, or abusive behavior.</li>
+            <li><b>Original Content:</b> Do not post copyrighted material unless you have permission. Always credit authors for shared works.</li>
+            <li><b>No Spam:</b> Spam, advertising, or self-promotion is not allowed, except in designated areas.</li>
+            <li><b>Privacy:</b> Do not share personal information of yourself or others without consent.</li>
+            <li><b>Moderation:</b> Moderators may edit or remove content that violates these rules or is otherwise inappropriate.</li>
+            <li><b>Account Responsibility:</b> You are responsible for your account’s security and any actions taken under your username.</li>
+            <li><b>Changes to Terms:</b> Terms may be updated; continued use of the forum constitutes acceptance of any changes.</li>
+          </ol>
+          <p class="terms-page__contact">
+            If you have questions, please <a href="/about">contact us</a> or post in the Announcements category.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>
+{{end}}
